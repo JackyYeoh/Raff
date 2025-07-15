@@ -1,0 +1,214 @@
+/* Enhanced 3D Liquid Glass Effects */
+.liquid-glass-card {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.28) 0%, 
+    rgba(255, 255, 255, 0.18) 50%, 
+    rgba(255, 255, 255, 0.28) 100%);
+  backdrop-filter: blur(32px) saturate(1.2);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    0 12px 40px rgba(0, 112, 209, 0.22),
+    0 2px 8px rgba(0,0,0,0.10),
+    inset 0 2px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.18);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.liquid-glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.05), 
+    transparent);
+  transition: left 0.8s ease;
+}
+
+.liquid-glass-card:hover::before {
+  left: 100%;
+}
+
+.liquid-glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 24px rgba(0, 112, 209, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glass Morphism Buttons */
+.glass-button {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 15px rgba(0, 112, 209, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(0, 112, 209, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(0, 112, 209, 0.3);
+}
+
+/* Enhanced Slider with Liquid Effects */
+.liquid-slider {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 112, 209, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-slider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 112, 209, 0.6), 
+    transparent);
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+/* Enhanced Progress Bar with Liquid Effect */
+.liquid-progress {
+  background: linear-gradient(90deg, 
+    rgba(0, 112, 209, 0.1) 0%, 
+    rgba(0, 112, 209, 0.2) 50%, 
+    rgba(0, 112, 209, 0.1) 100%);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 112, 209, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-progress > div {
+  position: relative;
+  z-index: 2;
+}
+
+.liquid-progress > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    transparent 100%);
+  animation: progressShimmer 2s ease-in-out infinite;
+}
+
+@keyframes progressShimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+@keyframes liquidFlow {
+  0%, 100% { 
+    transform: translateX(-10px) scaleX(1);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: translateX(10px) scaleX(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+/* Liquid Badges */
+.liquid-badge {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent);
+  transition: left 0.3s ease;
+}
+
+.liquid-badge:hover::before {
+  left: 100%;
+}
+
+/* Liquid Image Container */
+.liquid-image-container {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 112, 209, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.liquid-image-container:hover::before {
+  transform: translateX(100%);
+}
+
+/* Tailwind CSS utility extensions */
+.shadow-ps { box-shadow: 0 4px 12px rgba(0, 112, 209, 0.15); }
+.shadow-ps-lg { box-shadow: 0 8px 25px rgba(0, 112, 209, 0.2); }
+.shadow-ps-hover { box-shadow: 0 10px 30px rgba(0, 112, 209, 0.25); }
+.shadow-ps-yellow-hover { box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3); } 
